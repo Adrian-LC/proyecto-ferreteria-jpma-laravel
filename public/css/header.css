@@ -1,0 +1,105 @@
+/*--------------------------------- header -----------------------------------*/
+._encabezado {
+  font-family: 'Fjalla One', sans-serif;
+  background-color: #232F3E;
+  box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.38), 0 1px 2px 0 rgba(0, 0, 0, 0.33);
+}
+
+._contenedor-hamburguesa {
+  width: 45px;
+  height: 45px;
+  border-radius: 5px;
+  box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.38), 0 1px 2px 0 rgba(0, 0, 0, 0.33);
+  /* flexbox */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+._hamburguesa {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+._hamburguesa > ._linea, ._hamburguesa > ._linea::before, ._hamburguesa > ._linea::after {
+  width: 25px;
+  height: 2px;
+  background-color: #FFF;
+}
+
+._hamburguesa > ._linea {
+  position: relative;
+  top: 50%;
+  left: 0;
+  margin: auto;
+}
+
+._hamburguesa > ._linea::before, ._hamburguesa > ._linea::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+._hamburguesa > ._linea::before {
+  top: -10px;
+}
+
+._hamburguesa > ._linea::after {
+  top: 10px;
+}
+
+._nav-link-foto-perfil {
+  width: 22px;
+  height: 22px;
+  border-radius: 3px;
+  vertical-align: top;
+}
+
+._opciones-usuario {
+  width: 45px;
+}
+
+._boton-foto-perfil {
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+}
+
+._boton-foto-perfil > img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+._opciones-usuario > ul {
+  left: -250%;
+}
+
+._opciones-usuario > ._admin {
+  left: -440%;
+}
+
+._carritoUno, ._carritoDos {
+  display: inline-block;
+  border-radius: 5px;
+}
+
+._carritoUno {
+  padding: 4px;
+}
+
+._carritoDos {
+  text-align: center;
+  width: 42px;
+  height: 32px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+._carritoUno > span, ._carritoDos > span {
+  font-size: 0.85rem;
+  color: #FFF;
+}

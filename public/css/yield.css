@@ -1,0 +1,8 @@
+/*--------------------------------- yield ------------------------------------*/
+._yield {
+  min-height: 75vh;
+  /*flex*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

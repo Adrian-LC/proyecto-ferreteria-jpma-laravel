@@ -1,0 +1,12 @@
+/*--------------------------------- footer -----------------------------------*/
+._piePagina {
+  background-image: linear-gradient(180deg, #171D2B, #030305);
+}
+
+._piePagina > ._derechos-autor {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+._piePagina > ._info > ._web > ul > li > a > ._icon-web {
+  font-size: 2rem;
+}
