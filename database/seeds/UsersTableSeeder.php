@@ -17,7 +17,6 @@ class UsersTableSeeder extends Seeder
           'last_name' => "",
           'email' => "administrador@gmail.com",
           'password' => Hash::make("12345678"),
-          'avatar' => "avatar_default.jpg",
           'state_u' => 1,
           'user_category_id' => 1
         ]);
