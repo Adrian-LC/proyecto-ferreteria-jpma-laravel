@@ -30,7 +30,7 @@
       <!-- header -->
       @include('parts.header')
       <!-- contenido -->
-      <section class="_yield">
+      <section class="_yield p-2">
         @yield('content')
       </section>
       <!-- footer -->
