@@ -33,7 +33,12 @@
               <span class="text-danger">{{ Auth::user()->first_name }}</span>{{ __(' - Mi Perfil') }}
             </a>
           </li>
-          @if(Auth::user()->user_category_id == 1)
+          @if(Auth::user()->user_category_id != 3)
+            @if(Auth::user()->user_category_id == 1)
+              <li class="nav-item d-lg-none">
+                <a class="nav-link text-white" href="{{ route('administrateAdministrators') }}">{{ __('Administrar Administradores') }}</a>
+              </li>
+            @endif
             <li class="nav-item d-lg-none">
               <a class="nav-link text-white" href="">{{ __('Administrar Clientes') }}</a>
             </li>
@@ -67,10 +72,13 @@
     @else
       <div class="_opciones-usuario dropdown d-none d-lg-block order-lg-4 ml-2">
         <button class="_boton-foto-perfil btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ (Auth::user()->avatar) ? asset('storage/avatar/'.Auth::user()->avatar) : asset('img/avatar_default.jpg') }}" alt="Avatar"></button>
-        <ul class="dropdown-menu {{ (Auth::user()->user_category_id == 1) ? '_admin' : '' }}" aria-labelledby="dropdownMenuButton">
+        <ul class="dropdown-menu {{ (Auth::user()->user_category_id != 3) ? '_admin' : '' }}" aria-labelledby="dropdownMenuButton">
           <li class="pt-1 pb-1 pl-4 pr-4 border-bottom text-danger">{{ Auth::user()->first_name }}</li>
           <li><a class="dropdown-item" href="">{{ __('Mi Perfil') }}</a></li>
-          @if(Auth::user()->user_category_id == 1)
+          @if(Auth::user()->user_category_id != 3)
+            @if(Auth::user()->user_category_id == 1)
+              <li><a class="dropdown-item" href="{{ route('administrateAdministrators') }}">{{ __('Administrar Administradores') }}</a></li>
+            @endif
             <li><a class="dropdown-item" href="">{{ __('Administrar Clientes') }}</a></li>
             <li><a class="dropdown-item" href="{{ route('administrateProducts') }}">{{ __('Administrar Productos') }}</a></li>
             <li><a class="dropdown-item" href="{{ route('administrateProductCategories') }}">{{ __('Administrar Categorías Productos') }}</a></li>

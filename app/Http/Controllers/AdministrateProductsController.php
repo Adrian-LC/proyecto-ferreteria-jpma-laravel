@@ -30,6 +30,7 @@ class AdministrateProductsController extends Controller
         'detail' => 'required|string|max:65535',
         'poster' => 'required|file|mimes:jpeg,bmp,png',
         'stock' => 'required|integer|min:0|max:1000000',
+        'state_p' => 'required|integer|min:0|max:1',
         'product_category_id' => 'required|integer'
       ];
       $this->validate($request, $rules);
@@ -66,6 +67,8 @@ class AdministrateProductsController extends Controller
         'detail' => 'required|string|max:65535',
         'poster' => 'file|mimes:jpeg,bmp,png',
         'stock' => 'required|integer|min:0|max:1000000',
+        'new' => 'required|integer|min:0|max:1',
+        'state_p' => 'required|integer|min:0|max:1',
         'product_category_id' => 'required|integer'
       ];
       $this->validate($request, $rules);

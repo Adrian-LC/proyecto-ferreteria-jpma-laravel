@@ -54,3 +54,15 @@ Route::put('editFrequentQuestion/{id}', 'AdministrateFrequentQuestionsController
 Route::get('detailsFrequentQuestion/{id}', 'AdministrateFrequentQuestionsController@show')->name('detailsFrequentQuestion')->middleware('auth')->middleware('admin');
 //eliminar pregunta frecuente
 Route::delete('deleteFrequentQuestion', 'AdministrateFrequentQuestionsController@destroy')->name('deleteFrequentQuestion');
+
+
+//administrar administradores
+Route::get('administrateAdministrators', 'AdministrateAdministratorsController@index')->name('administrateAdministrators')->middleware('auth')->middleware('main.admin');
+//agregar administrador
+Route::get('addAdministrator', 'AdministrateAdministratorsController@create')->name('addAdministrator')->middleware('auth')->middleware('main.admin');
+Route::post('addAdministrator', 'AdministrateAdministratorsController@save')->name('addAdministrator');
+//editar administrador
+Route::get('editAdministrator/{id}', 'AdministrateAdministratorsController@edit')->name('editAdministrator')->middleware('auth')->middleware('main.admin');
+Route::put('editAdministrator/{id}', 'AdministrateAdministratorsController@update')->name('editAdministrator');
+//detalles administrador
+Route::get('detailsAdministrator/{id}', 'AdministrateAdministratorsController@show')->name('detailsAdministrator')->middleware('auth')->middleware('main.admin');

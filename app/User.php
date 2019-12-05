@@ -6,6 +6,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+use App\User_category;
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -36,4 +38,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function user_category()
+    {
+      return $this->belongsTo(User_category::class);
+    }
+
+    public function fullName()
+    {
+      return $this->first_name." ".$this->last_name;
+    }
 }

@@ -42,13 +42,12 @@ class AdministrateProductCategoriesController extends Controller
     {
       $productCategories = Product_category::where('id', '!=', $id)->get();
       $rules = [
-        'name_pc' => 'required|string|max:30'
+        'name_pc' => 'required|string|max:30',
+        'state_pc' => 'required|integer|min:0|max:1'
       ];
       foreach ($productCategories as  $productCategory) {
         if($productCategory->name_pc == ucwords(strtolower($request->input('name_pc')))){
-          $rules = [
-            'name_pc' => 'required|string|unique:product_categories|max:30'
-          ];
+          $rules['name_pc'] = 'required|string|unique:product_categories|max:30';
         }
       }
       $this->validate($request, $rules);

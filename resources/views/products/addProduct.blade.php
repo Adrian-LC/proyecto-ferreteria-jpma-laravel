@@ -114,7 +114,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="hola" class="col-md-4 col-form-label text-md-right">{{ __('Categoría') }}</label>
+                            <label for="" class="col-md-4 col-form-label text-md-right">{{ __('Categoría') }}</label>
 
                             <div class="col-md-6">
                                 <select id="" class="w-100 form-control @error('product_category_id') is-invalid @enderror" name="product_category_id">
