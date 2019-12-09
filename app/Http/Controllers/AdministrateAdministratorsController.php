@@ -11,7 +11,7 @@ class AdministrateAdministratorsController extends Controller
 {
     public function index()
     {
-      $administrators = User::where('id', '=', 2)->paginate(10);
+      $administrators = User::where('user_category_id', '=', 2)->paginate(10);
       return view('administrators.administrateAdministrators')->with('administrators', $administrators);
     }
 

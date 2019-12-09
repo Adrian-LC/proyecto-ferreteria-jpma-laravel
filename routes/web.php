@@ -66,3 +66,15 @@ Route::get('editAdministrator/{id}', 'AdministrateAdministratorsController@edit'
 Route::put('editAdministrator/{id}', 'AdministrateAdministratorsController@update')->name('editAdministrator');
 //detalles administrador
 Route::get('detailsAdministrator/{id}', 'AdministrateAdministratorsController@show')->name('detailsAdministrator')->middleware('auth')->middleware('main.admin');
+
+
+//administrar clientes
+Route::get('administrateClients', 'AdministrateClientsController@index')->name('administrateClients')->middleware('auth')->middleware('admin');
+//agregar cliente
+Route::get('addClient', 'AdministrateClientsController@create')->name('addClient')->middleware('auth')->middleware('admin');
+Route::post('addClient', 'AdministrateClientsController@save')->name('addClient');
+//editar cliente
+Route::get('editClient/{id}', 'AdministrateClientsController@edit')->name('editClient')->middleware('auth')->middleware('admin');
+Route::put('editClient/{id}', 'AdministrateClientsController@update')->name('editClient');
+//detalles cliente
+Route::get('detailsClient/{id}', 'AdministrateClientsController@show')->name('detailsClient')->middleware('auth')->middleware('admin');

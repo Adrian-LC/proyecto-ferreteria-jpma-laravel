@@ -40,7 +40,7 @@
               </li>
             @endif
             <li class="nav-item d-lg-none">
-              <a class="nav-link text-white" href="">{{ __('Administrar Clientes') }}</a>
+              <a class="nav-link text-white" href="{{ route('administrateClients') }}">{{ __('Administrar Clientes') }}</a>
             </li>
             <li class="nav-item d-lg-none">
               <a class="nav-link text-white" href="{{ route('administrateProducts') }}">{{ __('Administrar Productos') }}</a>
@@ -79,7 +79,7 @@
             @if(Auth::user()->user_category_id == 1)
               <li><a class="dropdown-item" href="{{ route('administrateAdministrators') }}">{{ __('Administrar Administradores') }}</a></li>
             @endif
-            <li><a class="dropdown-item" href="">{{ __('Administrar Clientes') }}</a></li>
+            <li><a class="dropdown-item" href="{{ route('administrateClients') }}">{{ __('Administrar Clientes') }}</a></li>
             <li><a class="dropdown-item" href="{{ route('administrateProducts') }}">{{ __('Administrar Productos') }}</a></li>
             <li><a class="dropdown-item" href="{{ route('administrateProductCategories') }}">{{ __('Administrar Categorías Productos') }}</a></li>
             <li><a class="dropdown-item" href="{{ route('administrateFrequentQuestions') }}">{{ __('Administrar Preguntas Frecuentes') }}</a></li>
