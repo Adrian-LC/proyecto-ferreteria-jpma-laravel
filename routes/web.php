@@ -28,6 +28,8 @@ Route::post('addProductCategory', 'AdministrateProductCategoriesController@save'
 //editar categoría de producto
 Route::get('editProductCategory/{id}', 'AdministrateProductCategoriesController@edit')->name('editProductCategory')->middleware('auth')->middleware('admin');
 Route::put('editProductCategory/{id}', 'AdministrateProductCategoriesController@update')->name('editProductCategory');
+//buscar categorías de productos
+Route::get('searchProductCategories', 'AdministrateProductCategoriesController@search')->name('searchProductCategories')->middleware('auth')->middleware('admin');
 
 
 //administrar productos
@@ -40,10 +42,12 @@ Route::get('editProduct/{id}', 'AdministrateProductsController@edit')->name('edi
 Route::put('editProduct/{id}', 'AdministrateProductsController@update')->name('editProduct');
 //detalles producto
 Route::get('detailsProduct/{id}', 'AdministrateProductsController@show')->name('detailsProduct')->middleware('auth')->middleware('admin');
+//buscar productos
+Route::get('searchProducts', 'AdministrateProductsController@search')->name('searchProducts')->middleware('auth')->middleware('admin');
 
 
 //administrar preguntas frecuentes
-Route::get('administrateFrequentQuestions', 'AdministrateFrequentQuestionsController@index')->name('administrateFrequentQuestions')->middleware('auth')->middleware('admin');
+Route::get('administrateFrequentQuestions', 'AdministrateFrequentQuestionsController@indexAFQ')->name('administrateFrequentQuestions')->middleware('auth')->middleware('admin');
 //agregar pregunta frecuente
 Route::get('addFrequentQuestion', 'AdministrateFrequentQuestionsController@create')->name('addFrequentQuestion')->middleware('auth')->middleware('admin');
 Route::post('addFrequentQuestion', 'AdministrateFrequentQuestionsController@save')->name('addFrequentQuestion');
@@ -54,6 +58,10 @@ Route::put('editFrequentQuestion/{id}', 'AdministrateFrequentQuestionsController
 Route::get('detailsFrequentQuestion/{id}', 'AdministrateFrequentQuestionsController@show')->name('detailsFrequentQuestion')->middleware('auth')->middleware('admin');
 //eliminar pregunta frecuente
 Route::delete('deleteFrequentQuestion', 'AdministrateFrequentQuestionsController@destroy')->name('deleteFrequentQuestion');
+//buscar preguntas frecuentes
+Route::get('searchFrequentQuestions', 'AdministrateFrequentQuestionsController@search')->name('searchFrequentQuestions')->middleware('auth')->middleware('admin');
+//sección preguntas frecuentes
+Route::get('frequentQuestions', 'AdministrateFrequentQuestionsController@indexFQ')->name('frequentQuestions');
 
 
 //administrar administradores
@@ -66,6 +74,8 @@ Route::get('editAdministrator/{id}', 'AdministrateAdministratorsController@edit'
 Route::put('editAdministrator/{id}', 'AdministrateAdministratorsController@update')->name('editAdministrator');
 //detalles administrador
 Route::get('detailsAdministrator/{id}', 'AdministrateAdministratorsController@show')->name('detailsAdministrator')->middleware('auth')->middleware('main.admin');
+//buscar administradores
+Route::get('searchAdministrators', 'AdministrateAdministratorsController@search')->name('searchAdministrators')->middleware('auth')->middleware('main.admin');
 
 
 //administrar clientes
@@ -78,3 +88,5 @@ Route::get('editClient/{id}', 'AdministrateClientsController@edit')->name('editC
 Route::put('editClient/{id}', 'AdministrateClientsController@update')->name('editClient');
 //detalles cliente
 Route::get('detailsClient/{id}', 'AdministrateClientsController@show')->name('detailsClient')->middleware('auth')->middleware('admin');
+//buscar clientes
+Route::get('searchClients', 'AdministrateClientsController@search')->name('searchClients')->middleware('auth')->middleware('admin');

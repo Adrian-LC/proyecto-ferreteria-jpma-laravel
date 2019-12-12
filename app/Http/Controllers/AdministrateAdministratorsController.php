@@ -86,4 +86,21 @@ class AdministrateAdministratorsController extends Controller
       $administrator = User::find($id);
       return view('administrators.detailsAdministrator')->with('administrator', $administrator);
     }
+
+    public function search(Request $request)
+    {
+      if($request->input('search')){
+        $administratorsToFilter = User::where('user_category_id', '=', 2)->get();
+        $administratorsId = [];
+        foreach($administratorsToFilter as $administrator){
+          if(stripos($administrator->fullName(), $request->input('search')) !== false){
+            $administratorsId[] = $administrator->id;
+          }
+        }
+        $administrators = User::where('user_category_id', '=', 2)->whereIn('id', $administratorsId)->paginate(10);
+      }else{
+        $administrators = User::where('user_category_id', '=', 2)->paginate(10);
+      }
+      return view('administrators.administrateAdministrators')->with('administrators', $administrators);
+    }
 }

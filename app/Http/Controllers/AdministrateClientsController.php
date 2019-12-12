@@ -86,4 +86,21 @@ class AdministrateClientsController extends Controller
       $client = User::find($id);
       return view('clients.detailsClient')->with('client', $client);
     }
+
+    public function search(Request $request)
+    {
+      if($request->input('search')){
+        $clientsToFilter = User::where('user_category_id', '=', 3)->get();
+        $clientsId = [];
+        foreach($clientsToFilter as $client){
+          if(stripos($client->fullName(), $request->input('search')) !== false){
+            $clientsId[] = $client->id;
+          }
+        }
+        $clients = User::where('user_category_id', '=', 3)->whereIn('id', $clientsId)->paginate(10);
+      }else{
+        $clients = User::where('user_category_id', '=', 3)->paginate(10);
+      }
+      return view('clients.administrateClients')->with('clients', $clients);
+    }
 }

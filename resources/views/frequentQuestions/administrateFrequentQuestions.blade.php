@@ -3,7 +3,7 @@
 @section('content')
 <h1 class="text-center">Administrar Preguntas Frecuentes</h1>
 <section class="pb-1 d-flex justify-content-between">
-  <form class="d-flex align-items-center" action="" method="GET">
+  <form class="d-flex align-items-center" action="{{ route('searchFrequentQuestions') }}" method="GET">
     <input class="btn btn-primary" type="submit" value="Buscar"><input type="text" name="search">
   </form>
   <a class="btn btn-success" href="{{ route('addFrequentQuestion') }}">{{ __('Agregar Pregunta Frecuente') }}</a>
@@ -34,6 +34,8 @@
       </tr>
     @endforeach
   </tbody>
-  {{ $frequentQuestions->links() }}
 </table>
+<section class="d-flex justify-content-center">
+  {{ $frequentQuestions->links() }}
+</section>
 @endsection

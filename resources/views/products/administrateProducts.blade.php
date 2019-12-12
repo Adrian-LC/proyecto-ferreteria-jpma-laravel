@@ -3,7 +3,7 @@
 @section('content')
 <h1 class="text-center">Administrar Productos</h1>
 <section class="pb-1 d-flex justify-content-between">
-  <form class="d-flex align-items-center" action="" method="GET">
+  <form class="d-flex align-items-center" action="{{ route('searchProducts') }}" method="GET">
     <input class="btn btn-primary" type="submit" value="Buscar"><input type="text" name="search">
   </form>
   <a class="btn btn-success" href="{{ route('addProduct') }}">{{ __('Agregar Producto') }}</a>

@@ -14,7 +14,7 @@
           <a class="nav-link text-white" href="{{ url('/') }}">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="">Preguntas Frecuentes</a>
+          <a class="nav-link text-white" href="{{ route('frequentQuestions') }}">Preguntas Frecuentes</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="">Contacto</a>

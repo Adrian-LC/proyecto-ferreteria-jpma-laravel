@@ -57,4 +57,14 @@ class AdministrateProductCategoriesController extends Controller
       $editProductCategory->update();
       return redirect()->route('administrateProductCategories');
     }
+
+    public function search(Request $request)
+    {
+      if($request->input('search')){
+        $productCategories = Product_category::where('name_pc', 'like', '%'.$request->input('search').'%')->paginate(10);
+      }else{
+        $productCategories = Product_category::paginate(10);
+      }
+      return view('productCategories.administrateProductCategories')->with('productCategories', $productCategories);
+    }
 }

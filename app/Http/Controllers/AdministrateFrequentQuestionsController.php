@@ -8,7 +8,7 @@ use App\Frequent_question;
 
 class AdministrateFrequentQuestionsController extends Controller
 {
-    public function index()
+    public function indexAFQ()
     {
       $frequentQuestions = Frequent_question::paginate(10);
       return view('frequentQuestions.administrateFrequentQuestions')->with('frequentQuestions', $frequentQuestions);
@@ -65,5 +65,21 @@ class AdministrateFrequentQuestionsController extends Controller
       $frequentQuestion = Frequent_question::find($id);
       $frequentQuestion->delete();
       return redirect()->route('administrateFrequentQuestions');
+    }
+
+    public function search(Request $request)
+    {
+      if($request->input('search')){
+        $frequentQuestions = Frequent_question::where('question', 'like', '%'.$request->input('search').'%')->paginate(10);
+      }else{
+        $frequentQuestions = Frequent_question::paginate(10);
+      }
+      return view('frequentQuestions.administrateFrequentQuestions')->with('frequentQuestions', $frequentQuestions);
+    }
+
+    public function indexFQ()
+    {
+      $frequentQuestions = Frequent_question::paginate(10);
+      return view('frequentQuestions.frequentQuestions')->with('frequentQuestions', $frequentQuestions);
     }
 }

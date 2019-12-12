@@ -95,4 +95,14 @@ class AdministrateProductsController extends Controller
       $product = Product::find($id);
       return view('products.detailsProduct')->with('product', $product);
     }
+
+    public function search(Request $request)
+    {
+      if($request->input('search')){
+        $products = Product::where('name_p', 'like', '%'.$request->input('search').'%')->paginate(10);
+      }else{
+        $products = Product::paginate(10);
+      }
+      return view('products.administrateProducts')->with('products', $products);
+    }
 }
