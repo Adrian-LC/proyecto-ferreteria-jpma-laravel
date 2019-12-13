@@ -8,10 +8,25 @@
         </div>
       </div>
     </button>
-    <div class="collapse navbar-collapse justify-content-lg-end order-4 order-lg-2" id="navbarSupportedContent">
-      <ul class="navbar-nav pt-2 pt-lg-0">
+    <div class="collapse navbar-collapse justify-content-lg-between order-4 order-lg-2" id="navbarSupportedContent">
+      <div class="offset-lg-2 pt-3 pb-2 py-lg-0">
+        <form class="form-inline d-flex flex-nowrap">
+          <button class="btn btn-primary" type="submit">Buscar</button>
+          <input class="form-control ml-1 w-100" type="search" placeholder="ingresá tu búsqueda..." aria-label="Search">
+        </form>
+      </div>
+      <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link text-white" href="{{ url('/') }}">Inicio</a>
+        </li>
+        <li class="nav-item dropdown">
+          <div class="nav-link text-white dropdown-toggle border-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Categorías
+          </div>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="">Pinturas</a></li>
+            <li><a class="dropdown-item" href="">Herramientas</a></li>
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="{{ route('frequentQuestions') }}">Preguntas Frecuentes</a>
