@@ -25,7 +25,6 @@
     <link rel="icon" href="{{ asset('img/logo.ico') }}">
 </head>
 <body>
-
     <div id="app" class="container-fluid p-0">
       <!-- header -->
       @include('parts.header')
@@ -36,6 +35,7 @@
       <!-- footer -->
       @include('parts.footer')
     </div>
-
+    @yield('script')
+    <script src="{{ asset('js/productCategories.js') }}" charset="utf-8"></script>
 </body>
 </html>

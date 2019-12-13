@@ -11,13 +11,23 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
+// Route::get('/home', 'HomeController@index')->name('home'); //lo cambie por myProfile
+
+
+//rutas para la autenticación
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+//sección inicio
+Route::get('/', 'RootController@index');
+
+
+//sección mi perfil
+Route::get('myProfile', 'MyProfileController@index')->name('myProfile');
 
 
 //administrar categorías de productos
@@ -90,3 +100,8 @@ Route::put('editClient/{id}', 'AdministrateClientsController@update')->name('edi
 Route::get('detailsClient/{id}', 'AdministrateClientsController@show')->name('detailsClient')->middleware('auth')->middleware('admin');
 //buscar clientes
 Route::get('searchClients', 'AdministrateClientsController@search')->name('searchClients')->middleware('auth')->middleware('admin');
+
+
+/*uso de fetch*/
+//mostrar categorías de productos
+Route::get('productCategories', 'FetchController@indexPC');
