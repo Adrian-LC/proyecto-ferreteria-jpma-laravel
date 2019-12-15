@@ -105,3 +105,7 @@ Route::get('searchClients', 'AdministrateClientsController@search')->name('searc
 /*uso de fetch*/
 //mostrar categorías de productos
 Route::get('productCategories', 'FetchController@indexPC');
+//contar los productos del carrito cada vez que cargue una página
+Route::get('countCart', 'FetchController@indexCC');
+//añadir producto al carrito
+Route::post('addToCart', 'FetchController@saveATC');

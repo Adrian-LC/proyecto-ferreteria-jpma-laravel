@@ -111,7 +111,7 @@
           </li>
         </ul>
       </div>
-      <a class="_carritoUno order-3 text-decoration-none bg-success ml-lg-2 mr-lg-2" href="">
+      <a id="cart" class="_carritoUno order-3 text-decoration-none bg-success ml-lg-2 mr-lg-2" href="">
         <span class="icon-ecommerce"></span>
         <span class="_cantidad">(0)</span>
       </a>

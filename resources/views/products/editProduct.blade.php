@@ -96,7 +96,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="" class="col-md-4 col-form-label text-md-right">{{ __('Producto en Sección "Nuevo"') }}</label>
+                            <label for="" class="col-md-4 col-form-label text-md-right">{{ __('Producto en Sección "Novedades"') }}</label>
 
                             <div class="col-md-6">
                                 <input id="" type="radio" class="" name="new" value="1" autocomplete="new" autofocus {{ ($product->new == 1) ? "checked" : "" }}> Si

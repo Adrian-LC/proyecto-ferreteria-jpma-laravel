@@ -1,0 +1,28 @@
+/*------------------------------ novedades -----------------------------------*/
+._r-novedades > article {
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.4);
+}
+
+._r-novedades > article > ._r-nuevo {
+  background-image: linear-gradient(180deg, #D50000, #FF9800);
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.4);
+  font-size: 1.2rem;
+  position: absolute;
+  top: 0.5rem;
+  left: -1rem;
+}
+/*-- modal --*/
+.modal-footer > form > p > input {
+  width: 60px ;
+  padding-left: 10px;
+}
+
+.modal-header > h5{
+  font-weight: bold;
+  margin: auto;
+}
+
+.modal-header > button {
+  position: absolute;
+  right: 20px;
+}

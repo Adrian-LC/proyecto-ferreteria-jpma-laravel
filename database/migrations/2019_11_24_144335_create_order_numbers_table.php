@@ -15,6 +15,7 @@ class CreateOrderNumbersTable extends Migration
     {
         Schema::create('order_numbers', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->tinyInteger('state_on');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });

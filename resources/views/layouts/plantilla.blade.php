@@ -37,5 +37,6 @@
     </div>
     @yield('script')
     <script src="{{ asset('js/productCategories.js') }}" charset="utf-8"></script>
+    <script src="{{ asset('js/countCart.js') }}" charset="utf-8"></script>
 </body>
 </html>
