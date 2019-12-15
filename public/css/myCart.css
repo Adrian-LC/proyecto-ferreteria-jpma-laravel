@@ -1,0 +1,9 @@
+/*----------------------------- mi carrito -----------------------------------*/
+._mc-carrito > section:nth-child(1), ._mc-carrito > section:nth-child(2) > section:nth-child(1) {
+  box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.38), 0 1px 2px 0 rgba(0, 0, 0, 0.33);
+}
+
+._mc-carrito > section:nth-child(2) > section:nth-child(2) > p > ion-icon {
+  font-size: 1.5rem;
+  vertical-align: top;
+}

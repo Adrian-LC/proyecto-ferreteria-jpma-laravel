@@ -71,4 +71,65 @@ class FetchController extends Controller
         return response()->json(false);
       }
     }
+
+    public function updateCQ(Request $request)
+    {
+      //busco el número de orden
+      $orderNumber = Order_number::where('user_id', '=', Auth::user()->id)->where('state_on', '=', 1)->get();
+      //busco el pedido del producto y actualizo la cantidad del mismo
+      //siempre y cuando la cantidad sea mayor o igual a cero
+      if($request->input('quantity') >= 0){
+        $editOrder = Order::where('order_number_id', '=', $orderNumber[0]->id)->where('product_id', '=', $request->input('product_id'))->get();
+        $editOrder[0]->quantity = $request->input('quantity');
+        $editOrder[0]->update();
+        //calculo el subtotal del producto
+        $subPrice = $request->input('quantity') * $editOrder[0]->product->price_p;
+        //calculo el precio total de todos los productos
+        $orders = Order::where('order_number_id', '=', $orderNumber[0]->id)->get();
+        $totalPrice = 0;
+        foreach($orders as $order){
+          if($order->quantity > 0){
+            $totalPrice += ($order->quantity * $order->product->price_p);
+          }
+        }
+        return response()->json([
+          'product_id' => $request->input('product_id'),
+          'subPrice' => $subPrice,
+          'totalPrice' => $totalPrice
+        ]);
+      }
+      return response()->json(false);
+    }
+
+    public function destroyDO(Request $request)
+    {
+      //busco el número de orden
+      $orderNumber = Order_number::where('user_id', '=', Auth::user()->id)->where('state_on', '=', 1)->get();
+      //busco el pedido del producto que quiero eliminar
+      $order = Order::where('order_number_id', '=', $orderNumber[0]->id)->where('product_id', '=', $request->input('product_id'))->get();
+      if($order->count() > 0){
+        $order[0]->delete();
+        //busco los pedidos de productos que quedaron en el carrito
+        //si no hay productos en el carrito, envío al usuario a la página de inicio
+        $orders = Order::where('order_number_id', '=', $orderNumber[0]->id)->get();
+        if($orders->count() > 0){
+          //calculo el precio total de todos los productos que quedaron
+          $totalPrice = 0;
+          foreach($orders as $order){
+            if($order->quantity > 0){
+              $totalPrice += ($order->quantity * $order->product->price_p);
+            }
+          }
+          //en el caso que queden productos, entonces solo borro de la pantalla el producto que se busca borrar
+          //también retorno la cantidad de productos que quedaron en el pedido
+          //y por último el precio total
+          return response()->json([
+            'product_id' => $request->input('product_id'),
+            'count' => $orders->count(),
+            'totalPrice' => $totalPrice
+          ]);
+        }
+      }
+      return response()->json(false);
+    }
 }

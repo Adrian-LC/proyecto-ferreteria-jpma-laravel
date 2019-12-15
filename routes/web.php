@@ -30,6 +30,10 @@ Route::get('/', 'RootController@index');
 Route::get('myProfile', 'MyProfileController@index')->name('myProfile');
 
 
+//sección mi carrito
+Route::get('myCart', 'MyCartController@index')->name('myCart')->middleware('auth');
+
+
 //administrar categorías de productos
 Route::get('administrateProductCategories', 'AdministrateProductCategoriesController@index')->name('administrateProductCategories')->middleware('auth')->middleware('admin');
 //agregar categoría de producto
@@ -109,3 +113,7 @@ Route::get('productCategories', 'FetchController@indexPC');
 Route::get('countCart', 'FetchController@indexCC');
 //añadir producto al carrito
 Route::post('addToCart', 'FetchController@saveATC');
+//modificar cantidad de un producto del carrito
+Route::put('changeQuantity', 'FetchController@updateCQ');
+//eliminar producto del carrito
+Route::delete('deleteOrder', 'FetchController@destroyDO');
