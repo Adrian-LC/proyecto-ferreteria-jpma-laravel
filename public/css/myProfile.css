@@ -1,0 +1,50 @@
+.derecha{
+    width: auto;
+}
+.pf-div{
+    background-color: rgba(128, 128, 128, 0.342);
+}
+    .banner-perfil{
+        height: auto;
+        
+    }
+        .img-banner-perfil{
+            z-index: 0;
+            height: 300px;
+        }
+    .img-perfil{
+        position: absolute;
+        margin-top: -112.5px;
+        margin-left: 90px;
+        z-index: 1;
+        border-radius: 100%;
+    }
+        .img-perfil > img {
+            position: absolute;
+            box-shadow: 2px 2px 10px #666;
+            width: 180px;
+            height: 180px;
+            border-radius: 100%;
+        }
+    .subMenu-perfil{
+        margin-left: 300px;
+        margin-bottom: 50px;
+    }
+        .lista{
+            margin-top: 5px;
+        }
+        .lista .option{
+            /*text-decoration: none;*/
+            list-style: none;
+            display: inline;
+        }
+        .option a {
+            background-color: rgba(35, 47, 62, 0.596);
+            color:#fff;
+            text-decoration:none;
+            padding:5px 50px;
+            border-radius: 5px;
+        }
+        .option a:hover{
+            background-color: rgb(35, 47, 62);
+        }
