@@ -22,7 +22,7 @@
               <form action="" method="">
                 @csrf
                 <input type="hidden" name="product_id" value="{{ $order->product_id }}">
-                <input class="_quantity w-100" type="number" name="quantity" value="{{ $order->quantity }}" min="0">
+                <input class="_quantity w-100" type="number" name="quantity" value="{{ $order->quantity }}" min="1">
               </form>
             </div>
           </div>
@@ -49,7 +49,10 @@
       <p class="m-0">Transporte:</p>
       <p class="m-0">Impuesto:</p>
       <p id="totalPrice" class="border-bottom border-secondary">{{ 'Total: $'.$totalPrice }}</p>
-      <button type="button" class="btn btn-danger btn-block">INICIAR PAGO</button>
+      <form class="" action="{{ route('confirmCart') }}" method="POST">
+        @csrf
+        <button type="submit" class="btn btn-danger btn-block">INICIAR PAGO</button>
+      </form>
     </section>
     <section class="p-2">
       <p class="m-0 border-bottom border-secondary"><ion-icon name="logo-model-s"></ion-icon>

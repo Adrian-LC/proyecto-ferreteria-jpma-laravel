@@ -32,6 +32,12 @@ Route::get('myProfile', 'MyProfileController@index')->name('myProfile');
 
 //sección mi carrito
 Route::get('myCart', 'MyCartController@index')->name('myCart')->middleware('auth');
+//confirmar carrito
+Route::post('confirmCart', 'MyCartController@confirm')->name('confirmCart');
+//mercado pago
+Route::get('mp/success', 'MercadoPagoController@success');
+//Route::get('mp/failure', 'MercadoPagoController@failure');
+//Route::get('mp/pending', 'MercadoPagoController@pending');
 
 
 //administrar categorías de productos

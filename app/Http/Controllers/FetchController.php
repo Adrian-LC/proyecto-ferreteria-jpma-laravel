@@ -46,7 +46,7 @@ class FetchController extends Controller
           $orderNumber = Order_number::where('user_id', '=', Auth::user()->id)->where('state_on', '=', 1)->get();
           //genero un pedido del producto que se quiere añadir al carrito
           $addOrder = new Order();
-          $addOrder->quantity = 0;
+          $addOrder->quantity = 1;
           $addOrder->user_id_o = Auth::user()->id; //puede ser que esta columna no sea necesaria
           $addOrder->order_number_id = $orderNumber[0]->id;
           $addOrder->product_id = $request->input('product_id');
@@ -57,7 +57,7 @@ class FetchController extends Controller
           if(!isset($order[0])){
           //si no existe el pedido del producto, genero un pedido del producto que se quiere añadir al carrito
             $addOrder = new Order();
-            $addOrder->quantity = 0;
+            $addOrder->quantity = 1;
             $addOrder->user_id_o = Auth::user()->id; //puede ser que esta columna no sea necesaria
             $addOrder->order_number_id = $orderNumber[0]->id;
             $addOrder->product_id = $request->input('product_id');
@@ -77,8 +77,8 @@ class FetchController extends Controller
       //busco el número de orden
       $orderNumber = Order_number::where('user_id', '=', Auth::user()->id)->where('state_on', '=', 1)->get();
       //busco el pedido del producto y actualizo la cantidad del mismo
-      //siempre y cuando la cantidad sea mayor o igual a cero
-      if($request->input('quantity') >= 0){
+      //siempre y cuando la cantidad sea mayor o igual a uno
+      if($request->input('quantity') >= 1){
         $editOrder = Order::where('order_number_id', '=', $orderNumber[0]->id)->where('product_id', '=', $request->input('product_id'))->get();
         $editOrder[0]->quantity = $request->input('quantity');
         $editOrder[0]->update();
