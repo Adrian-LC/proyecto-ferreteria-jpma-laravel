@@ -24,7 +24,7 @@ class AdministrateProductsController extends Controller
     public function save(Request $request)
     {
       $rules = [
-        'name_p' => 'required|string|max:30',
+        'name_p' => 'required|string|max:70',
         'price_p' => 'required|numeric|min:0|max:999999.99',
         'offer' => 'required|integer|min:0|max:100',
         'detail' => 'required|string|max:65535',
@@ -61,7 +61,7 @@ class AdministrateProductsController extends Controller
     public function update(Request $request, $id)
     {
       $rules = [
-        'name_p' => 'required|string|max:30',
+        'name_p' => 'required|string|max:70',
         'price_p' => 'required|numeric|min:0|max:999999.99',
         'offer' => 'required|integer|min:0|max:100',
         'detail' => 'required|string|max:65535',
