@@ -15,6 +15,7 @@ window.addEventListener('load', function(){
           let newA = document.createElement('a')
           newA.innerText = productCategory.name_pc
           newA.classList.add('dropdown-item')
+          newA.setAttribute('href', 'http://localhost:8000/categories/' + productCategory.id)
           let newLi = document.createElement('li')
           newLi.append(newA)
           productCategories.append(newLi)

@@ -26,6 +26,10 @@ Auth::routes();
 Route::get('/', 'RootController@index');
 
 
+//seccion de categorías(productos)
+Route::get('categories/{id}', 'CategoriesController@index');
+
+
 //sección mi perfil
 Route::get('myProfile', 'MyProfileController@index')->name('myProfile');
 
