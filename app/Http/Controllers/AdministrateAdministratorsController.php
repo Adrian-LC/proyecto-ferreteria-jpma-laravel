@@ -54,10 +54,12 @@ class AdministrateAdministratorsController extends Controller
         'first_name' => 'required|string|max:255',
         'last_name' => 'required|string|max:255',
         'email' => 'required|string|email|max:255',
-        'password' => 'required|string|min:8|confirmed',
         'avatar' => 'file|mimes:jpeg,bmp,png',
         'state_u' => 'required|integer|min:0|max:1'
       ];
+      if($request->input('password')){
+        $rules['password'] = 'string|min:8|confirmed';
+      }
       foreach ($users as $user) {
         if($user->email == $request->input('email')){
           $rules['email'] = 'required|string|email|max:255|unique:users';
@@ -69,7 +71,7 @@ class AdministrateAdministratorsController extends Controller
       $editAdministrator->last_name = ucwords(strtolower($request->input('last_name')));
       $editAdministrator->email = $request->input('email');
       $editAdministrator->state_u = $request->input('state_u');
-      if($editAdministrator->password != $request->input('password')){
+      if($request->input('password')){
         $editAdministrator->password = Hash::make($request->input('password'));
       }
       if($request->file('avatar')){
