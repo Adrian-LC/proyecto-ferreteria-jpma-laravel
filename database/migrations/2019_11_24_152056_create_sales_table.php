@@ -17,6 +17,7 @@ class CreateSalesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedDecimal('total_price', 8, 2);
             $table->unsignedBigInteger('order_number_id_s'); //se puede agregar unique()
+            $table->unsignedBigInteger('user_id_s');
             $table->unsignedBigInteger('payment_method_id');
             $table->timestamps();
         });

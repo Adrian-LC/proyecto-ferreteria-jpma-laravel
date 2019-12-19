@@ -27,6 +27,7 @@ class MercadoPagoController extends Controller
       $addSale = new Sale();
       $addSale->total_price = $totalPrice;
       $addSale->order_number_id_s = $orderNumber[0]->id;
+      $addSale->user_id_s = Auth::user()->id;
       $addSale->payment_method_id = 1;
       $addSale->save();
       //busco la venta registrada, para agregar su id a los pedidos y tener registrado a que venta pertenecen cada uno
