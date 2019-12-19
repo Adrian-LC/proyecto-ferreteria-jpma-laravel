@@ -9,10 +9,10 @@
       </div>
     </button>
     <div class="collapse navbar-collapse justify-content-lg-between order-4 order-lg-2" id="navbarSupportedContent">
-      <div class="offset-lg-2 pt-3 pb-2 py-lg-0">
-        <form class="form-inline d-flex flex-nowrap">
-          <button class="btn btn-primary" type="submit">Buscar</button>
-          <input class="form-control ml-1 w-100" type="search" placeholder="ingresá tu búsqueda..." aria-label="Search">
+      <div class="col-12 col-lg-5 offset-lg-1 pt-3 pb-2 py-lg-0 px-0">
+        <form class="col-12 form-inline d-flex flex-nowrap formu-search p-0">
+          <button class="btn btn-search p-0" type="submit"><ion-icon class="icon-search" name="search" ></ion-icon></button>
+          <input class="form-control ml-1 w-100 input-search" type="search" placeholder="ingresá tu búsqueda..." aria-label="Search">
         </form>
       </div>
       <ul class="navbar-nav">

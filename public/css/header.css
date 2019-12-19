@@ -103,3 +103,21 @@
   font-size: 0.85rem;
   color: #FFF;
 }
+
+.btn-search{
+  background-color:lightblue;
+  width: 37px;
+  height: 37px;
+  margin-left: 4px;
+  border: 1px solid #ced4da;
+  color: whites;
+  position: absolute;
+}
+
+.icon-search{
+  width: 30px;
+  height: 30px;
+}
+.input-search{
+  padding-left: 38px;
+}
