@@ -40,7 +40,7 @@
                     <img src="{{ asset('storage/poster/'.$product->poster) }}" class="w-100" alt="">
                   </section>
                   <section class="col-12 col-md-9 col-lg-5">
-                    <h6>Datos Técnicos:</h6>
+                    <h6><b>Datos Técnicos:</b></h6>
                     <p class="m-0">{{ $product->detail }}</p>
                     <h4 class="m-0 pt-3 text-primary">{{ '$'.$product->price_p }}</h4>
                   </section>
