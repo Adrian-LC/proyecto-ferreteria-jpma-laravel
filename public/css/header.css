@@ -89,6 +89,7 @@
 
 ._carritoUno {
   padding: 4px;
+  background: lightseagreen;
 }
 
 ._carritoDos {
@@ -97,6 +98,8 @@
   height: 32px;
   padding-top: 4px;
   padding-bottom: 4px;
+  background: lightseagreen;
+
 }
 
 ._carritoUno > span, ._carritoDos > span {
@@ -105,18 +108,19 @@
 }
 
 .btn-search{
-  background-color:lightblue;
+  background-color:lightseagreen;
   width: 37px;
   height: 37px;
   margin-left: 4px;
   border: 1px solid #ced4da;
-  color: whites;
+  color: white;
   position: absolute;
 }
 
 .icon-search{
   width: 30px;
   height: 30px;
+  margin-top: 2px;
 }
 .input-search{
   padding-left: 40px;

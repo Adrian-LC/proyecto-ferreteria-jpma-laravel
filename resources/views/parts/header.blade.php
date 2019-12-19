@@ -81,7 +81,7 @@
       </ul>
     </div>
     @guest
-      <a class="_carritoDos order-3 text-decoration-none bg-danger ml-lg-2 mr-lg-2" href="">
+      <a class="_carritoDos order-3 text-decoration-none ml-lg-2 mr-lg-2" href="">
         <span class="icon-ecommerce"></span>
       </a>
     @else
@@ -111,7 +111,7 @@
           </li>
         </ul>
       </div>
-      <a id="cart" class="_carritoUno order-3 text-decoration-none bg-success ml-lg-2 mr-lg-2" href="{{ route('myCart') }}">
+      <a id="cart" class="_carritoUno order-3 text-decoration-none ml-lg-2 mr-lg-2" href="{{ route('myCart') }}">
         <span class="icon-ecommerce"></span>
         <span class="_cantidad">(0)</span>
       </a>
