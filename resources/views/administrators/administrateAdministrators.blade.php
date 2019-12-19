@@ -32,6 +32,8 @@
       </tr>
     @endforeach
   </tbody>
-  {{ $administrators->links() }}
 </table>
+<section class="d-flex justify-content-center">
+  {{ $administrators->links() }}
+</section>
 @endsection

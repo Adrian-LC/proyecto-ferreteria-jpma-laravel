@@ -11,7 +11,7 @@
         <li class="list-group-item">Apellido: {{ $client->last_name }}</li>
         <li class="list-group-item">email: {{ $client->email }}</li>
         <li class="list-group-item">Categoría: {{ $client->user_category->name_uc }}</li>
-        <li class="list-group-item">Estado: {{ ($client->state_u == 1) ? "Activado" : "Desactivado" }}</li>
+        {{-- <li class="list-group-item">Estado: {{ ($client->state_u == 1) ? "Activado" : "Desactivado" }}</li> --}}
       </ul>
       <a class="btn btn-dark" href="{{ route('administrateClients') }}">{{ __('Administrar Clientes') }}</a>
     </div>

@@ -3,8 +3,8 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+        <div class="col-md-10 col-lg-8">
+            <div class="_form card">
                 <div class="card-header">{{ __('Editar Producto') }}</div>
 
                 <div class="card-body">
@@ -98,18 +98,26 @@
                         <div class="form-group row">
                             <label for="" class="col-md-4 col-form-label text-md-right">{{ __('Producto en Sección "Novedades"') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 d-flex align-items-center">
+                              <div class="mr-3">
                                 <input id="" type="radio" class="" name="new" value="1" autocomplete="new" autofocus {{ ($product->new == 1) ? "checked" : "" }}> Si
+                              </div>
+                              <div>
                                 <input id="" type="radio" class="" name="new" value="0" autocomplete="new" autofocus {{ ($product->new == 0) ? "checked" : "" }}> No
+                              </div>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="" class="col-md-4 col-form-label text-md-right">{{ __('Activar Producto') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 d-flex align-items-center">
+                              <div class="mr-3">
                                 <input id="" type="radio" class="" name="state_p" value="1" autocomplete="state_p" autofocus {{ ($product->state_p == 1) ? "checked" : "" }}> Si
+                              </div>
+                              <div>
                                 <input id="" type="radio" class="" name="state_p" value="0" autocomplete="state_p" autofocus {{ ($product->state_p == 0) ? "checked" : "" }}> No
+                              </div>
                             </div>
                         </div>
 

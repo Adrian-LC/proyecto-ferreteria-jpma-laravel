@@ -13,8 +13,8 @@
       </div>
     @endif
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+        <div class="col-md-10 col-lg-8">
+            <div class="_form card">
                 <div class="card-header">{{ __('Agregar Producto') }}</div>
 
                 <div class="card-body">
@@ -107,9 +107,13 @@
                         <div class="form-group row">
                             <label for="" class="col-md-4 col-form-label text-md-right">{{ __('Activar Producto') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="" type="radio" class="" name="state_p" value="1" autocomplete="state_p" autofocus checked> Si
-                                <input id="" type="radio" class="" name="state_p" value="0" autocomplete="state_p" autofocus> No
+                            <div class="col-md-6 d-flex align-items-center">
+                                <div class="mr-3">
+                                  <input id="" type="radio" class="" name="state_p" value="1" autocomplete="state_p" autofocus checked> Si
+                                </div>
+                                <div>
+                                  <input id="" type="radio" class="" name="state_p" value="0" autocomplete="state_p" autofocus> No
+                                </div>
                             </div>
                         </div>
 

@@ -3,8 +3,8 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+        <div class="col-md-10 col-lg-8">
+            <div class="_form card">
                 <div class="card-header">{{ __('Editar Categoría de Producto') }}</div>
 
                 <div class="card-body">
@@ -29,9 +29,13 @@
                         <div class="form-group row">
                             <label for="" class="col-md-4 col-form-label text-md-right">{{ __('Activar Categoría') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 d-flex align-items-center">
+                              <div class="mr-3">
                                 <input id="" type="radio" class="" name="state_pc" value="1" autocomplete="state_pc" autofocus {{ ($productCategory->state_pc == 1) ? "checked" : "" }}> Si
+                              </div>
+                              <div>
                                 <input id="" type="radio" class="" name="state_pc" value="0" autocomplete="state_pc" autofocus {{ ($productCategory->state_pc == 0) ? "checked" : "" }}> No
+                              </div>
                             </div>
                         </div>
 

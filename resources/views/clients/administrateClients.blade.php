@@ -32,6 +32,8 @@
       </tr>
     @endforeach
   </tbody>
-  {{ $clients->links() }}
 </table>
+<section class="d-flex justify-content-center">
+  {{ $clients->links() }}
+</section>
 @endsection

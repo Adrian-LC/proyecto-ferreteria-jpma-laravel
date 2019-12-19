@@ -11,7 +11,7 @@
         <li class="list-group-item">Apellido: {{ $administrator->last_name }}</li>
         <li class="list-group-item">email: {{ $administrator->email }}</li>
         <li class="list-group-item">Categoría: {{ $administrator->user_category->name_uc }}</li>
-        <li class="list-group-item">Estado: {{ ($administrator->state_u == 1) ? "Activado" : "Desactivado" }}</li>
+        {{-- <li class="list-group-item">Estado: {{ ($administrator->state_u == 1) ? "Activado" : "Desactivado" }}</li> --}}
       </ul>
       <a class="btn btn-dark" href="{{ route('administrateAdministrators') }}">{{ __('Administrar Administradores') }}</a>
     </div>

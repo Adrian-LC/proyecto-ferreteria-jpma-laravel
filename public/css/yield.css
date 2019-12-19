@@ -1,4 +1,5 @@
 /*--------------------------------- yield ------------------------------------*/
 ._yield {
+  background-image: url('../img/fondo.png');
   min-height: 75vh;
 }

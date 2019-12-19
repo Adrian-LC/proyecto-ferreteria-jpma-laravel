@@ -27,6 +27,8 @@
       </tr>
     @endforeach
   </tbody>
-  {{ $productCategories->links() }}
 </table>
+<section class="d-flex justify-content-center">
+  {{ $productCategories->links() }}
+</section>
 @endsection
