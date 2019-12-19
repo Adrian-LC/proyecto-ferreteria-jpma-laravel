@@ -23,6 +23,7 @@
     <link href="{{ asset('css/master.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('img/icono_carrito/style.css') }}">
     <link rel="icon" href="{{ asset('img/logo.ico') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 </head>
 <body>
     <div id="app" class="container-fluid p-0">

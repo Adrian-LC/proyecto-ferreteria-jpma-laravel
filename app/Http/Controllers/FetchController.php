@@ -66,7 +66,10 @@ class FetchController extends Controller
         }
         //retornar la cantidad de productos que hay en el pedido
         $orders = Order::where('order_number_id', '=', $orderNumber[0]->id)->get();
-        return response()->json($orders->count());
+        return response()->json([
+          'count' => $orders->count(),
+          'product_id' => $request->input('product_id')
+        ]);
       }else{
         return response()->json(false);
       }

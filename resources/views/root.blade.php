@@ -48,6 +48,13 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
+                @if(Auth::user())
+                  <div id="{{ 'modal-message-'.$newProduct->id }}" class="alert alert-success text-center mb-0 py-1 d-none animated zoomIn fast" role="alert">
+                      <strong>Se agregó el producto al carrito de compras.</strong>
+                      <br>
+                      <a  class="text-success" href="{{ route('myCart') }}"><b>{{ __('Ir a mi carrito') }}</b></a>
+                  </div>
+                @endif
                 <div class="modal-body row m-0 justify-content-center align-items-lg-center">
                   <section class="col-10 col-md-7 col-lg-4">
                     <img src="{{ asset('storage/poster/'.$newProduct->poster) }}" class="w-100" alt="">

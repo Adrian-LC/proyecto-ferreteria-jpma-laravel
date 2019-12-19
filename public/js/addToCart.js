@@ -27,10 +27,13 @@ window.addEventListener('load', function(){
         })
         .then(function(data){
           if(data){
-            console.log(data)
+            //console.log(data)
             let cart = document.getElementById('cart')
             let count = cart.children[1];
-            count.innerText = "(" + data + ")"
+            count.innerText = "(" + data.count + ")"
+            let message = document.getElementById('modal-message-' + data.product_id)
+            message.classList.remove('d-none')
+            message.classList.add('d-block')
           }else{
             location.href = 'http://localhost:8000/login'
           }
