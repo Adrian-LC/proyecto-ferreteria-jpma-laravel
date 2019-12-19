@@ -121,3 +121,9 @@
 .input-search{
   padding-left: 38px;
 }
+
+@media(min-width:992px) and (max-width:1220px){
+  .div-formu-search{
+    max-width: 25%;
+  }
+}
