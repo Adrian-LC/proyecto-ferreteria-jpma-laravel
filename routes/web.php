@@ -67,7 +67,9 @@ Route::put('editProduct/{id}', 'AdministrateProductsController@update')->name('e
 //detalles producto
 Route::get('detailsProduct/{id}', 'AdministrateProductsController@show')->name('detailsProduct')->middleware('auth')->middleware('admin');
 //buscar productos
-Route::get('searchProducts', 'AdministrateProductsController@search')->name('searchProducts')->middleware('auth')->middleware('admin');
+Route::get('searchProducts', 'AdministrateProductsController@searchSP')->name('searchProducts')->middleware('auth')->middleware('admin');
+//seccion mi busqueda de productos (navbar)
+Route::get('mySearch', 'AdministrateProductsController@searchMS')->name('mySearch');
 
 
 //administrar preguntas frecuentes

@@ -96,7 +96,7 @@ class AdministrateProductsController extends Controller
       return view('products.detailsProduct')->with('product', $product);
     }
 
-    public function search(Request $request)
+    public function searchSP(Request $request)
     {
       if($request->input('search')){
         $products = Product::where('name_p', 'like', '%'.$request->input('search').'%')->paginate(10);
@@ -104,5 +104,21 @@ class AdministrateProductsController extends Controller
         $products = Product::paginate(10);
       }
       return view('products.administrateProducts')->with('products', $products);
+    }
+
+    public function searchMS(Request $request)
+    {
+      $mySearch = $request->input('search');
+      $products = Product::where('name_p', 'like','%'.$mySearch.'%')->where('state_p', '=', 1)->get();
+      $issetCategory = false;
+      if($mySearch){
+        foreach($products as $product){
+          if($product->product_category->state_pc == 1){
+            $issetCategory = true;
+            break;
+          }
+        }
+      }
+      return view('products.mySearch')->with('mySearch', $mySearch)->with('products', $products)->with('issetCategory', $issetCategory);
     }
 }

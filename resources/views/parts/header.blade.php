@@ -10,9 +10,9 @@
     </button>
     <div class="collapse navbar-collapse justify-content-lg-between order-4 order-lg-2" id="navbarSupportedContent">
       <div class="col-12 col-lg-5 div-formu-search offset-lg-1 pt-3 pb-2 py-lg-0 px-0">
-        <form class="col-12 col-lg-11 form-inline d-flex flex-nowrap formu-search p-0">
+        <form class="col-12 col-lg-11 form-inline d-flex flex-nowrap formu-search p-0" action="{{ route('mySearch') }}" method="GET">
           <button class="btn btn-search p-0" type="submit"><ion-icon class="icon-search" name="search" ></ion-icon></button>
-          <input class="form-control ml-1 w-100 input-search" type="search" placeholder="Ingresá tu búsqueda..." aria-label="Search">
+          <input class="form-control ml-1 w-100 input-search" type="search" name="search" placeholder="Ingresá tu búsqueda..." aria-label="Search">
         </form>
       </div>
       <ul class="navbar-nav">
