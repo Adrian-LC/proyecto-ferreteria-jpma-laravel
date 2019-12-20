@@ -32,6 +32,11 @@ Route::get('categories/{id}', 'CategoriesController@index');
 
 //sección mi perfil
 Route::get('myProfile', 'MyProfileController@index')->name('myProfile');
+//editar cliente
+Route::get('editUser', 'MyProfileController@edit')->name('editUser')->middleware('auth');
+Route::put('editUser', 'MyProfileController@update')->name('editUser');
+//detalles User
+Route::get('detailsUser', 'MyProfileController@show')->name('detailsUser')->middleware('auth');
 
 
 //sección mi carrito

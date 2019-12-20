@@ -48,3 +48,20 @@
         .option a:hover{
             background-color: rgb(35, 47, 62);
         }
+
+@media(max-width: 1220px){
+    .subMenu-perfil{
+        margin-left: 0px;
+        margin-top: 100px;
+
+    }
+    .subMenu-perfil ul a{
+        margin: 2px;
+    }
+    .lista .option{
+        /*text-decoration: none;*/
+        list-style: none;
+        display: block;
+        margin: 13px;
+    }
+}

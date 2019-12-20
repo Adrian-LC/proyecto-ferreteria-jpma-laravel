@@ -7,16 +7,15 @@
           <div class="primera">
             <div class="banner-perfil col-12 p-0 " >
               <img class="img-banner-perfil col-12 p-0" src="{{asset('img/universe-buena.jpg')}}" alt="">
-                <div class="img-perfil"><img src="{{ (Auth::user()->avatar) ? asset('storage/avatar/'.Auth::user()->avatar) : asset('img/avatar_default.jpg') }}" alt=""></div>
+                <div class="img-perfil">
+                  <img src="{{ (Auth::user()->avatar) ? asset('storage/avatar/'.Auth::user()->avatar) : asset('img/avatar_default.jpg') }}" alt="">
+                </div>
             </div>
           
-          <div class="col-9 subMenu-perfil ">
+          <div class="col-12 col-md-9 subMenu-perfil ">
             <ul class="lista">
               <li id="option" class="option"><a href="">Datos Personales</a></li>
               <li id="option" class="option"><a href="">Mis compras</a></li>
-              <li id="option" class="option"><a href="">Facturas</a></li>
-              <li id="option" class="option"><a href="">Ofertas</a></li>
-              <li id="option" class="option"><a href="">Pedidos</a></li>
             </ul>
           </div>
         </div>
