@@ -37,8 +37,8 @@ class MyProfileController extends Controller
     }
     public function edit()
     {
-      $client = User::find(Auth::user()->id);
-      return view('profileUser.editUser')->with('client', $client);
+      $user = User::find(Auth::user()->id);
+      return view('profileUser.editUser')->with('user', $user);
     }
 
     public function update(Request $request)

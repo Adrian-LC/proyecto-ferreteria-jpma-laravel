@@ -29,15 +29,15 @@
                   <section class="ofertas col-12 flex-wrap justify-content-around p-3 m-0 row">
                       <article class="col-12 col-lg-3 p-0 mb-2 mb-lg-0 column bg-white">
                         <img class="col-12 p-0" src="{{asset('storage/poster/herramienta1.png')}}" alt="">
-                        <p>Lorem, ipsum.</p>
+                        <p>Moladora Boch.</p>
                       </article>
                       <article class="col-12 col-lg-3 p-0 mb-2 mb-lg-0 bg-white">
                         <img class="col-12 p-0 " src="{{asset('storage/poster/herramienta2.jpg')}}" alt="">
-                        <p>Lorem, ipsum.</p>
+                        <p>Casco para soldar</p>
                       </article>
                       <article class="col-12 col-lg-3 p-0 mb-2 mb-lg-0 bg-white">
                         <img class="col-12 p-0 " src="{{asset('storage/poster/herramienta3.jpg')}}" alt="">
-                        <p>Lorem, ipsum.</p>
+                        <p>Herramientas...</p>
                       </article>
                   </section>
               </div>
