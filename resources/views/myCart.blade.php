@@ -45,17 +45,17 @@
   </section>
   <section class="p-0 col-11 col-md-4 col-lg-3">
     <section class="bg-white p-2 mb-3">
-      <h2 class="border-bottom border-secondary text-center">Resumen</h2>
-      <p class="m-0">Transporte:</p>
-      <p class="m-0">Impuesto:</p>
-      <p id="totalPrice" class="border-bottom border-secondary">{{ 'Total: $'.$totalPrice }}</p>
+      <h2 class="border-bottom border-secondary text-center mb-0">Resumen</h2>
+      {{-- <p class="m-0">Transporte:</p>
+      <p class="m-0">Impuesto:</p> --}}
+      <p id="totalPrice" class="border-bottom border-secondary py-2">{{ 'Total: $'.$totalPrice }}</p>
       <form class="" action="{{ route('confirmCart') }}" method="POST">
         @csrf
         <button type="submit" class="btn btn-danger btn-block">INICIAR PAGO</button>
       </form>
     </section>
     <section class="p-2">
-      <p class="m-0 border-bottom border-secondary"><ion-icon name="logo-model-s"></ion-icon>
+      {{-- <p class="m-0 border-bottom border-secondary"><ion-icon name="logo-model-s"></ion-icon>
         Realizamos envíos por OCA, MercadoEnvíos, o Camioneta (Sin cargo por volumen)
       </p>
       <p class="m-0 border-bottom border-secondary"><ion-icon name="logo-usd"></ion-icon>
@@ -63,6 +63,12 @@
       </p>
       <p class="m-0"><ion-icon name="checkmark"></ion-icon>
         ¡El pedido sólo se confirmará al hacer click en el botón "Pedido con obligación de pago" en la última parte del proceso de compra!
+      </p> --}}
+      <p class="m-0 border-bottom border-secondary pb-2"><ion-icon name="logo-usd"></ion-icon>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <p class="m-0 pt-2"><ion-icon name="checkmark"></ion-icon>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
     </section>
   </section>

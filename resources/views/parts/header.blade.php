@@ -58,10 +58,10 @@
               <a class="nav-link text-white" href="{{ route('administrateClients') }}">{{ __('Administrar Clientes') }}</a>
             </li>
             <li class="nav-item d-lg-none">
-              <a class="nav-link text-white" href="{{ route('administrateProducts') }}">{{ __('Administrar Productos') }}</a>
+              <a class="nav-link text-white" href="{{ route('administrateProductCategories') }}">{{ __('Administrar Categorías Productos') }}</a>
             </li>
             <li class="nav-item d-lg-none">
-              <a class="nav-link text-white" href="{{ route('administrateProductCategories') }}">{{ __('Administrar Categorías Productos') }}</a>
+              <a class="nav-link text-white" href="{{ route('administrateProducts') }}">{{ __('Administrar Productos') }}</a>
             </li>
             <li class="nav-item d-lg-none">
               <a class="nav-link text-white" href="{{ route('administrateFrequentQuestions') }}">{{ __('Administrar Preguntas Frecuentes') }}</a>
@@ -81,7 +81,7 @@
       </ul>
     </div>
     @guest
-      <a class="_carritoDos order-3 text-decoration-none ml-lg-2 mr-lg-2" href="">
+      <a class="_carritoDos order-3 text-decoration-none ml-lg-2 mr-lg-2">
         <span class="icon-ecommerce"></span>
       </a>
     @else
@@ -95,8 +95,8 @@
               <li><a class="dropdown-item" href="{{ route('administrateAdministrators') }}">{{ __('Administrar Administradores') }}</a></li>
             @endif
             <li><a class="dropdown-item" href="{{ route('administrateClients') }}">{{ __('Administrar Clientes') }}</a></li>
-            <li><a class="dropdown-item" href="{{ route('administrateProducts') }}">{{ __('Administrar Productos') }}</a></li>
             <li><a class="dropdown-item" href="{{ route('administrateProductCategories') }}">{{ __('Administrar Categorías Productos') }}</a></li>
+            <li><a class="dropdown-item" href="{{ route('administrateProducts') }}">{{ __('Administrar Productos') }}</a></li>
             <li><a class="dropdown-item" href="{{ route('administrateFrequentQuestions') }}">{{ __('Administrar Preguntas Frecuentes') }}</a></li>
           @endif
           <li>
