@@ -7,3 +7,8 @@
   font-size: 1.5rem;
   vertical-align: top;
 }
+
+._deleteOrder {
+  font-size: 1.3rem;
+  cursor: pointer;
+}

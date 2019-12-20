@@ -2,22 +2,22 @@
 
 @section('content')
 <!-- mi carrito -->
-<section class="_mc-carrito row m-0 justify-content-around align-items-start">
+<section class="_mc-carrito row m-0 justify-content-around align-items-start py-3">
   <section class="bg-white p-2 col-11 mb-4 mb-lg-0 col-md-7 col-lg-8">
     <h1 class="border-bottom border-secondary text-center">Mi Carrito</h1>
     @foreach($orders as $order)
       <div id="{{ 'div'.$order->product_id }}">
         <article class="row m-0 p-1 m-2 border">
-          <div class="col-lg-2">
+          <div class="col-6 col-lg-2">
             <img src="{{ asset('storage/poster/'.$order->product->poster) }}" class="w-100" alt="Poster">
           </div>
-          <div class="col-lg-4 d-flex justify-content-center align-items-center">
+          <div class="col-6 col-lg-4 d-flex justify-content-center align-items-center">
             <div>
               <p class="m-0 text-center">{{ $order->product->name_p }}</p>
               <p class="m-0 text-center">{{ '$'.$order->product->price_p }}</p>
             </div>
           </div>
-          <div class="col-lg-2 d-flex justify-content-center align-items-center">
+          <div class="col-6 col-md-4 col-lg-2 d-flex justify-content-center align-items-center">
             <div class="w-50">
               <form action="" method="">
                 @csrf
@@ -26,13 +26,13 @@
               </form>
             </div>
           </div>
-          <div class="col-lg-3 d-flex justify-content-center align-items-center">
+          <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center align-items-center">
             <div>
               <p class="m-0 text-center">subtotal:</p>
               <p id="{{ 'quantity'.$order->product_id }}" class="m-0 text-center">{{ '$'.($order->quantity * $order->product->price_p) }}</p>
             </div>
           </div>
-          <div class="col-lg-1 d-flex justify-content-center align-items-center">
+          <div class="col-12 col-md-4 col-lg-1 d-flex justify-content-center align-items-center">
             <form action="" method="">
               @csrf
               <input type="hidden" name="product_id" value="{{ $order->product_id }}">

@@ -20,5 +20,8 @@ class UsersTableSeeder extends Seeder
           'state_u' => 1,
           'user_category_id' => 1
         ]);
+
+        //uso factories para admin secundarios y clientes
+        factory(App\User::class, 15)->create();
     }
 }

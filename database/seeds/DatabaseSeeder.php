@@ -13,18 +13,20 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->truncateTables([
-          'payment_methods',
           'user_categories',
           'users',
           'product_categories',
-          'products'
+          'products',
+          'payment_methods',
+          'frequent_questions'
         ]);
 
-        $this->call(PaymentMethodsTableSeeder::class); //llamo a la clase seeder
-        $this->call(UserCategoriesTableSeeder::class);
+        $this->call(UserCategoriesTableSeeder::class); //llamo a la clase seeder
         $this->call(UsersTableSeeder::class);
         $this->call(ProductCategoriesTableSeeder::class);
         $this->call(ProductsTableSeeder::class);
+        $this->call(PaymentMethodsTableSeeder::class);
+        $this->call(FrequentQuestionsTableSeeder::class);
     }
 
     protected function truncateTables($tables)
