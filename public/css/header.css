@@ -49,6 +49,10 @@
   top: 10px;
 }
 
+._categorias-productos {
+  cursor: pointer;
+}
+
 ._nav-link-foto-perfil {
   width: 22px;
   height: 22px;

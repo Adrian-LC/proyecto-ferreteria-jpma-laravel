@@ -28,7 +28,8 @@ class MyProfileController extends Controller
      */
     public function index()
     {
-        return view('profileUser.myProfile');
+        $sale = Sale::where('user_id_s', '=', Auth::user()->id)->orderBy('id', 'DESC')->take(1)->paginate(4);
+        return view('profileUser.myProfile')->with('sale', $sale);
     }
     public function show()
     {

@@ -20,7 +20,7 @@
           <a class="nav-link text-white" href="{{ url('/') }}">Inicio</a>
         </li>
         <li class="nav-item dropdown">
-          <div class="nav-link text-white dropdown-toggle border-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="_categorias-productos nav-link text-white dropdown-toggle border-0" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Categorías
           </div>
           <ul id="productCategories" class="dropdown-menu" aria-labelledby="dropdownMenuButton">

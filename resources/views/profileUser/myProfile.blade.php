@@ -14,34 +14,33 @@
 
           <div class="col-12 col-md-9 subMenu-perfil ">
             <ul class="lista">
-              <li id="option" class="option"><a href="{{Route('detailsUser')}}">Datos Personales</a></li>
+              <li id="option" class="option"><a href="{{ route('detailsUser') }}">Datos Personales</a></li>
               <li id="option" class="option"><a href="#misCompras">Mis compras</a></li>
             </ul>
           </div>
         </div>
         <!---->
-          <div class="float-none der-abajo flex-column col-12 p-0">
+          <div class="float-none der-abajo flex-column col-12 p-0 px-2">
             <div class="der-abajo-arriba flex-column flex-nowrap col-12 p-0">
               <div id="misCompras">
-                <h2>Últimas compras</h2>
+                <h2>Su última compra</h2>
               </div>
-              <div class="col-12  mt-3 border-top p-0 text-center">
+              <div class="col-12 mt-3 border-top p-0 text-center">
                   <section class="ofertas col-12 flex-wrap justify-content-around p-3 m-0 row">
-                      <article class="col-12 col-lg-3 p-0 mb-2 mb-lg-0 column bg-white">
-                        <img class="col-12 p-0" src="{{asset('storage/poster/herramienta1.png')}}" alt="">
-                        <p>Moladora Boch.</p>
-                      </article>
-                      <article class="col-12 col-lg-3 p-0 mb-2 mb-lg-0 bg-white">
-                        <img class="col-12 p-0 " src="{{asset('storage/poster/herramienta2.jpg')}}" alt="">
-                        <p>Casco para soldar</p>
-                      </article>
-                      <article class="col-12 col-lg-3 p-0 mb-2 mb-lg-0 bg-white">
-                        <img class="col-12 p-0 " src="{{asset('storage/poster/herramienta3.jpg')}}" alt="">
-                        <p>Herramientas...</p>
-                      </article>
+                    @if(isset($sale[0]))
+                      @foreach ($sale[0]->orders as $key => $order)
+                        <article class="border border-dark col-12 col-md-6 col-lg-3 p-0 mb-2 mb-lg-0 column bg-white">
+                          <img class="col-9 p-0 w-50" src="{{ asset('storage/poster/'.$order->product->poster) }}" alt="">
+                          <p><b>Nombre: </b>{{ $order->product->name_p }}</p>
+                          <p><b>Precio: </b> {{ '$'.$order->price_o }}</p>
+                          <p><b>Cantidad: </b> {{ $order->quantity }}</p>
+                        </article>
+                      @endforeach
+                    @else
+                      <p class="m-0">Aún no hizo una compra...</p>
+                    @endif
                   </section>
               </div>
-
             </div>
           <!--tal vez nuevo div-->
           </div>
