@@ -7,6 +7,21 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+## Importante
+
+Este constituye un proyecto sobre el Framework Laravel, al descargarlo o clonarlo, deben tener en cuenta lo siguiente:
+
+- [Desde la consola, deben ejecutar el comando: composer install ó composer update]
+- [Tomar la información contenida en el archivo .env.example y crear su propio archivo .env, ejecutar los cambios que requiera]
+- [Se puede configurar el archivo .env para usar mailtrap(lineas 29-30) y mercado pago(linea 46)]
+- [Desde la consola, ejecutar el comando: php artisan key:generate]
+- [Crear carpetas avatar y poster en storage/app/public, esto es para poder ver los datos de prueba]
+- [Si se quiere ver las imagenes de prueba de los seeders y factories, tiene que copiar las imagenes que hay en la carpeta public/poster y pegarlo en storage/app/public/poster. No es necesario, es más por un tema de que al momento de cargar la página ya tenga un contenido]
+- [Acceso directo de la carpeta storage en public, ejecutar el comando: php artisan storage:link]
+- [Para las migraciones: php artisan migrate]
+- [Para los seeders y factories: php artisan db:seed]
+- [Ejecutar desde la consola, el comando: php artisan serve]
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:

@@ -24,7 +24,7 @@ $factory->define(User::class, function (Faker $faker) {
         'last_name' => $faker->lastName,
         'email' => $faker->unique()->safeEmail,
         // 'email_verified_at' => now(),
-        'password' => Hash::make('12345678'),
+        'password' => Hash::make('1234567890'),
         'avatar' => basename($faker->image($dir, 800, 600, 'people', true, false)),
         'state_u' => 1,
         'user_category_id' => $faker->numberBetween($min = 2, $max = 3),
